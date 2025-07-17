@@ -2,7 +2,7 @@
 
 'use strict';
 
-
+//IGNORE BELOW
 /**
  * 1. Import your lodown module using the require() method,
  *    using the string 'lodown-<my-username>', or whatever
@@ -18,18 +18,50 @@
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
+//IGNORE ABOVE
+//array of customer objects
 
-var maleCount = function(array) {
-  
+const maleCount = function(array) {
+    const mans = _.filter(array, function(customer){
+        return customer.gender === 'male';
+    });
+    return mans.length;
+    //why  nothing work now
+    /*
+    let maleCount = [];
+    for (let i=0; i<array.length; i++){
+        if (array[i].gender === "male"){
+            maleCount.push(array[i]);
+        }
+    }
+    return maleCount.length;
+    */
+    /*
+   let mans = 0;
+   for (let i=0; i<array.length; i++){
+    if (array[i].gender === "male"){
+        mans++;
+    }
+   }
+   return mans; */
 };
 
-var femaleCount;
+const femaleCount = function(array){
+    const gyals = _.filter(array, function(customer){
+        return customer.gender === "female";
+    });
+    return gyals.length;
+};
+    
 
-var oldestCustomer;
+const oldestCustomer = function(array){
 
-var youngestCustomer;
 
-var averageBalance;
+};
+/*
+const youngestCustomer;
+
+const averageBalance;
 
 var firstLetterCount;
 
@@ -40,7 +72,7 @@ var friendsCount;
 var topThreeTags;
 
 var genderCount;
-
+*/
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
