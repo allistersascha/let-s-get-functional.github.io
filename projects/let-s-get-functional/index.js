@@ -55,14 +55,43 @@ const femaleCount = function(array){
     
 
 const oldestCustomer = function(array){
+    let elder = 0;
+    let name = "";
+    for (let i=0; i<array.length; i++){
+        if (array[i].age > elder){
+            elder = array[i].age;
+            name = array[i].name;
+        }
+    }
+    return name;
+};
 
+const youngestCustomer = function(array){
+    let bebbe = 5000;
+    let name = "";
+    for (let i=0; i<array.length; i++){
+        if (array[i].age < bebbe){
+            bebbe = array[i].age;
+            name = array[i].name;
+        }
+    }
+    return name;
+};
 
+const averageBalance = function(arr){
+    let mahMoney = 0;
+    for (let i=0; i<arr.length; i++){
+        let bal = arr[i].balance;
+        let noDwolla = bal.slice(1, bal.length);
+        let noComma = noDwolla.replace(",", "");
+        let moneyNum = Number(noComma);
+        mahMoney += moneyNum;
+    }
+    
+    let avg = mahMoney / arr.length;
+    return avg;
 };
 /*
-const youngestCustomer;
-
-const averageBalance;
-
 var firstLetterCount;
 
 var friendFirstLetterCount;
