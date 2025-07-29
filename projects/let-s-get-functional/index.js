@@ -176,10 +176,11 @@ const topThreeTags = function(arr){
 const genderCount = function(arr){
     return arr.reduce(function(acc, c){
         if (Object.hasOwn(acc, c.gender)){
-            acc[c[gender]] += 1;
+            acc[c.gender] += 1;
         }else{
-            acc[c[gender]] = 1;
-        }
+            acc[c.gender] = 1;
+        };
+        return acc;
     }, {});
     //arr in, object out
     //must use reduce
