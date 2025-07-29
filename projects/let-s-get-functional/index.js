@@ -162,7 +162,7 @@ const topThreeTags = function(arr){
             freakObj[lowTags[i]] = 1;
         }
     };
-    console.log(freakObj);
+  
     let freakArr = Object.entries(freakObj);
     let ordered = freakArr.sort((a,b) => b[1] - a [1]);
 
@@ -174,16 +174,23 @@ const topThreeTags = function(arr){
 
 
 const genderCount = function(arr){
+    return arr.reduce(function(acc, c){
+        if (Object.hasOwn(acc, c.gender)){
+            acc[c[gender]] += 1;
+        }else{
+            acc[c[gender]] = 1;
+        }
+    }, {});
     //arr in, object out
     //must use reduce
-    let gender = {};
+    /*let gender = {};
     let wemon = arr.reduce((acc, c) => arr[c].gender === "female");
     let menz = arr.reduce ((acc, c) => arr[c].gender === "male");
     let gangGang = arr.reduce((acc, c) => arr[c].gender === "non-binary");
     gender[male] = menz;
     gender[female] = wemon;
     gender[non-binary] = gangGang;
-    return gender;
+    return gender; */
 
 };
 
